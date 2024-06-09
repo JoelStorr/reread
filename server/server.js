@@ -16,6 +16,11 @@ const GOOGLEBOOKSAPI = app.get("/books/:title", async (req, res) => {
     });
 });
 
+app.get("/profile", (req, res) => {
+  res.json("Root Profile page");
+});
+
+
 app.get("/", (req, res) => {
   res.json("Root Page");
 });
