@@ -20,6 +20,9 @@ app.get("/profile", (req, res) => {
   res.json("Root Profile page");
 });
 
+app.get("/login", (req, res) => {
+  res.json("Root Login page");
+});
 
 app.get("/", (req, res) => {
   res.json("Root Page");
