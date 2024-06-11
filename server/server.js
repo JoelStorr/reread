@@ -24,6 +24,10 @@ app.get("/login", (req, res) => {
   res.json("Root Login page");
 });
 
+app.get("/signup", (req, res) => {
+  res.json("Root SignUp page");
+});
+
 app.get("/", (req, res) => {
   res.json("Root Page");
 });
