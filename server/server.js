@@ -2,6 +2,8 @@ const http = require("http");
 const axios = require("axios");
 const app = require("./app");
 
+
+
 const PORT = process.env.PORT || 8000;
 
 const server = http.createServer(app);
@@ -20,13 +22,9 @@ app.get("/profile", (req, res) => {
   res.json("Root Profile page");
 });
 
-app.get("/login", (req, res) => {
-  res.json("Root Login page");
-});
 
-app.get("/signup", (req, res) => {
-  res.json("Root SignUp page");
-});
+
+
 
 app.get("/", (req, res) => {
   res.json("Root Page");
