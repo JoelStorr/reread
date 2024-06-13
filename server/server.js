@@ -14,9 +14,6 @@ app.get("/profile", (req, res) => {
 });
 
 
-
-
-
 app.get("/", (req, res) => {
   res.json("Root Page");
 });
