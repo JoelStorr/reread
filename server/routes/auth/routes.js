@@ -1,14 +1,12 @@
 const express = require('express');
+const {loginUser, registerUser} = require('./controller')
 
 const authRouter = express.Router();
 
 
-authRouter.get("/login", (req, res) => {
-  res.json("Root Login page");
-});
+authRouter.get("/login", loginUser);
 
-authRouter.get("/signup", (req, res) => {
-  res.json("Root SignUp page");
-});
+authRouter.get("/signup", registerUser);
+
 
 module.exports = authRouter;
