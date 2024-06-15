@@ -1,5 +1,7 @@
 const http = require("http");
 const axios = require("axios");
+require('dotenv').config();
+
 const app = require("./app");
 
 
