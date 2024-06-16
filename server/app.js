@@ -12,14 +12,12 @@ const listsRouter = require("./routes/lists");
 
 const app = express();
 
-
 // Authentication Middleware
 const AUTH_OPTIONS = {
   callbackURL: "/auth/google/callback",
   clientID: process.CLIENT_ID,
   clientSecret: process.CLIENT_SECRET,
 };
-
 
 function verifyCallback(accessToke, refreshToken, profile, done) {
   console.log("Google Profile", profile);
@@ -29,7 +27,6 @@ function verifyCallback(accessToke, refreshToken, profile, done) {
 passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
 
 app.use(passport.initialize());
-
 
 // Google Callbacks
 app.get(
@@ -48,14 +45,11 @@ app.get("/failure", (req, res) => {
   return res.send("Failed to login");
 });
 
-
-
-app.use('/auth', authRouter);
-app.use('/activebooks', activebooksRouter);
-app.use('/bookclub', bookclubRouter);
-app.use('/book', bookRouter);
-app.use('/community', communityRouter);
+app.use("/auth", authRouter);
+app.use("/activebooks", activebooksRouter);
+app.use("/bookclub", bookclubRouter);
+app.use("/book", bookRouter);
+app.use("/community", communityRouter);
 app.use("lists", listsRouter);
-
 
 module.exports = app;
