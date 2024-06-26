@@ -28,22 +28,7 @@ passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
 
 app.use(passport.initialize());
 
-// Google Callbacks
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    failureRedirect: "/failure",
-    successRedirect: "/",
-    session: false, //Diabled for testing without session
-  }),
-  (req, res) => {
-    console.log("Google called us back");
-  }
-);
 
-app.get("/failure", (req, res) => {
-  return res.send("Failed to login");
-});
 
 app.use("/auth", authRouter);
 app.use("/activebooks", activebooksRouter);
