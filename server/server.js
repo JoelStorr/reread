@@ -1,4 +1,5 @@
 const http = require("http");
+const path = require("path");
 const axios = require("axios");
 require('dotenv').config();
 
@@ -16,8 +17,8 @@ app.get("/profile", (req, res) => {
 });
 
 
-app.get("/", (req, res) => {
-  res.json("Root Page");
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 server.listen(PORT, () => {

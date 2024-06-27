@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const passport = require("passport");
 const { Strategy } = require("passport-google-oauth20");
 require("dotenv").config();
@@ -28,6 +29,8 @@ function verifyCallback(accessToke, refreshToken, profile, done) {
 passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
 
 app.use(passport.initialize());
+
+app.use(express.static(path.join(__dirname, "public")));
 
 
 
