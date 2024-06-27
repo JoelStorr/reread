@@ -1,8 +1,10 @@
 const express = require('express');
 const {loginUser, registerUser, userProfileInfo} = require('./controller')
-
+const passport = require('passport')
+const { Strategy } = require("passport-google-oauth20");
 const authRouter = express.Router();
 
+const app = require('./../../app');
 
 authRouter.get("/login", loginUser);
 

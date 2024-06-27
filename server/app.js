@@ -10,13 +10,14 @@ const bookRouter = require("./routes/books");
 const communityRouter = require("./routes/community");
 const listsRouter = require("./routes/lists");
 
+
 const app = express();
 
 // Authentication Middleware
 const AUTH_OPTIONS = {
   callbackURL: "/auth/google/callback",
-  clientID: process.CLIENT_ID,
-  clientSecret: process.CLIENT_SECRET,
+  clientID: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
 };
 
 function verifyCallback(accessToke, refreshToken, profile, done) {
