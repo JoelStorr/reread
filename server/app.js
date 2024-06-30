@@ -11,7 +11,6 @@ const bookRouter = require("./routes/books");
 const communityRouter = require("./routes/community");
 const listsRouter = require("./routes/lists");
 
-
 const app = express();
 
 // Authentication Middleware
@@ -31,8 +30,6 @@ passport.use(new Strategy(AUTH_OPTIONS, verifyCallback));
 app.use(passport.initialize());
 
 app.use(express.static(path.join(__dirname, "public")));
-
-
 
 app.use("/auth", authRouter);
 app.use("/activebooks", activebooksRouter);
